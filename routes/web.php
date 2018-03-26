@@ -11,12 +11,20 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/create',function(){
+    return view('create');
+});
+
 Route::get('/game','MainController@index');
 
-Auth::routes();
+Route::get('/wait','MainController@wait')->name('game.wait');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/join','MainController@onJoinGame')->name('game.join');
+
+Route::post('/create/game','MainController@onCreateGame')->name('game.create');

@@ -38,7 +38,7 @@ class Fool
     );
 
 
-    public function __construct($players = 2)
+    public function __construct($players = 1)
     {
         $this->countPlayers = $players;
         $this->generalFluffy = $this->fluffys[random_int(0,3)];
@@ -115,6 +115,11 @@ class Fool
     public function getFirstMove()
     {
         return $this->firstMovePlayer;
+    }
+
+    public function getCountPlayers()
+    {
+        return $this->countPlayers;
     }
 
 }
